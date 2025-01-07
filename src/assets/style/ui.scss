@@ -1,0 +1,98 @@
+:root{
+  --orange: #FF9100;
+  --gray: #9A9A9A;
+  --gray-light: #D0C6BE;
+  --white: #ffffff;
+  --black: #111111;
+  --gradient: linear-gradient(90deg, #fff 3.98%, #facca6 26.63%, #f6aa6b 57.09%, #ff9100 89.28%);;
+  --green: #32E53B;
+  --red: #F44336;
+}
+
+
+.btn{
+  border-radius: 60px;
+  text-transform: uppercase;
+  border-style: solid;
+
+  background: var(--bg-color);
+  border-color: var(--border-color);
+  border-width: var(--border-width);
+  color: var(--color);
+  padding: var(--padding);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+
+  @media(any-hover:hover){
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover{
+      background-color: var(--bg-color-hover);
+      border-color: var(--border-color-hover);
+      color: var(--color-hover);
+    }
+  }
+
+  &, &.primary{
+    --bg-color: var(--orange);
+    --bg-color-hover: var(--white);
+    --border-color: var(--orange);
+    --border-color-hover: var(--orange);
+    --border-width: 0px;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 12px 20px;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+
+
+  &.secondary{
+    border-radius: 0;
+    --bg-color: transparent;
+    --bg-color-hover: var(--white);
+    --border-color: var(--orange);
+    --border-color-hover: var(--white);
+    --border-width: 1px;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 12px 24px;
+    --font-size: 16px;
+    --font-weight: 600;
+    --line-height: 22px;
+  }
+
+  &.text-1{
+    border-radius: 0;
+    --bg-color: transparent;
+    --bg-color-hover: transparent;
+    --border-color: var(--orange);
+    --border-color-hover: var(--white);
+    --border-width: 0 0 1px 0;
+    --color: var(--orange);
+    --color-hover: var(--white);
+    --padding: 0 0 2px 0;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+
+  &.text-2{
+    --bg-color: transparent;
+    --bg-color-hover: transparent;
+    --border-color: var(--white);
+    --border-color-hover: var(--orange);
+    --border-width: 0 0 1px 0;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 0 0 2px 0;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+
+
+}

@@ -1,13 +1,8 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.scss";
+import {Open_Sans} from "next/font/google";
+import "@/assets/style/main.scss";
+import "@/assets/style/ui.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const openSans = Open_Sans({
   subsets: ["latin"],
 });
 
@@ -19,7 +14,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={openSans.className}>
         {children}
       </body>
     </html>
