@@ -1,6 +1,6 @@
 import { Open_Sans } from "next/font/google";
-import "@/assets/style/main.scss";
-import "@/assets/style/ui.scss";
+import "@/style/main.scss";
+import "@/style/ui.scss";
 
 const openSans = Open_Sans({
   subsets: ["latin"],

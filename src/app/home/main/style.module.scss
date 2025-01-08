@@ -1,0 +1,36 @@
+.main{
+  background: url('./img/bg.png') center/ cover no-repeat;
+  background-color: #0D0D0D;
+  @include mixins.fluid(padding-top, 275px, 142px, 320px, 1600px);
+  @include mixins.fluid(padding-bottom, 227px, 47px, 320px, 1600px);
+}
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.icon{
+  margin-bottom: 16px;
+  @include mixins.fluid(width, 44px, 32px, 320px, 1600px);
+  @include mixins.fluid(height, 44px, 32px, 320px, 1600px);
+}
+.title{
+  width: 100%;
+  max-width: 1327px;
+  margin-bottom: 24px;
+}
+.textGradient{
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.desc{
+  color: #fef4ec;
+  margin-bottom: 40px;
+  max-width: 900px;
+}
+.button{
+  padding: 18.5px 47px;
+}

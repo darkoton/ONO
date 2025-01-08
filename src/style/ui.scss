@@ -1,0 +1,170 @@
+:root {
+  --orange: #ff9100;
+  --gray: #9a9a9a;
+  --gray-light: #d0c6be;
+  --white: #ffffff;
+  --black: #111111;
+  --gradient: linear-gradient(90deg, #fff 3.98%, #facca6 26.63%, #f6aa6b 57.09%, #ff9100 89.28%);
+  --green: #32e53b;
+  --red: #f44336;
+}
+
+.typography {
+  &.h1 {
+    font-weight: 600;
+    line-height: 120%;
+    @include mixins.fluid(font-size, 72px, 34px, 390px, 1600px);
+  }
+  &.h2 {
+    font-weight: 500;
+    @include mixins.fluid(font-size, 52px, 30px, 390px, 1600px);
+    @include mixins.fluid(line-height, 78px, 45px, 390px, 1600px);
+  }
+  &.h3 {
+    font-weight: 500;
+    @include mixins.fluid(font-size, 36px, 22px, 390px, 1600px);
+    @include mixins.fluid(line-height, 54px, 33px, 390px, 1600px);
+  }
+  &.h4 {
+    font-weight: 500;
+    @include mixins.fluid(font-size, 32px, 20px, 390px, 1600px);
+    @include mixins.fluid(line-height, 48px, 30px, 390px, 1600px);
+  }
+  &.h5 {
+    font-weight: 400;
+    @include mixins.fluid(font-size, 28px, 22px, 390px, 1600px);
+    @include mixins.fluid(line-height, 42px, 33px, 390px, 1600px);
+  }
+  &.h6 {
+    font-weight: 400;
+    @include mixins.fluid(font-size, 22px, 18px, 390px, 1600px);
+    @include mixins.fluid(line-height, 33px, 27px, 390px, 1600px);
+  }
+  &.subtitle {
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    @include mixins.fluid(font-size, 16px, 13px, 390px, 1600px);
+    @include mixins.fluid(line-height, 22px, 18px, 390px, 1600px);
+  }
+  &.text-big {
+    font-weight: 400;
+    line-height: 150%;
+    @include mixins.fluid(font-size, 22px, 18px, 390px, 1600px);
+  }
+  &.text-medium {
+    font-weight: 400;
+    line-height: 180%;
+    @include mixins.fluid(font-size, 19px, 15px, 390px, 1600px);
+  }
+  &.text-small {
+    font-weight: 400;
+    line-height: 150%;
+    @include mixins.fluid(font-size, 17px, 15px, 390px, 1600px);
+  }
+  &.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    @include mixins.fluid(font-size, 17px, 16px, 390px, 1600px);
+  }
+}
+
+.button {
+  border-radius: 60px;
+  text-transform: uppercase;
+  border-style: solid;
+  display: flex;
+  gap: 12px;
+
+  background: var(--bg-color);
+  border-color: var(--border-color);
+  border-width: var(--border-width);
+  color: var(--color);
+  padding: var(--padding);
+  // font-size: var(--font-size);
+  // @include mixins.fluid(font-size, var(--font-size), var(--font-size) - 2px, 390px, 1600px);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: var(--bg-color-hover);
+      border-color: var(--border-color-hover);
+      color: var(--color-hover);
+
+      &.rotate-icon{
+        & .icon{
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &.rotate-icon{
+    & .icon{
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  &,
+  &.primary {
+    --bg-color: var(--orange);
+    --bg-color-hover: var(--white);
+    --border-color: var(--orange);
+    --border-color-hover: var(--orange);
+    --border-width: 0px;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 12px 20px;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+
+  &.secondary {
+    --bg-color: transparent;
+    --bg-color-hover: var(--white);
+    --border-color: var(--orange);
+    --border-color-hover: var(--white);
+    --border-width: 1px;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 12px 24px;
+    --font-size: 16px;
+    --font-weight: 600;
+    --line-height: 22px;
+  }
+
+  &.text-1 {
+    border-radius: 0;
+    --bg-color: transparent;
+    --bg-color-hover: transparent;
+    --border-color: var(--orange);
+    --border-color-hover: var(--white);
+    --border-width: 0 0 1px 0;
+    --color: var(--orange);
+    --color-hover: var(--white);
+    --padding: 0 0 2px 0;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+
+  &.text-2 {
+    --bg-color: transparent;
+    --bg-color-hover: transparent;
+    --border-color: var(--white);
+    --border-color-hover: var(--orange);
+    --border-width: 0 0 1px 0;
+    --color: var(--white);
+    --color-hover: var(--orange);
+    --padding: 0 0 2px 0;
+    --font-size: 17px;
+    --font-weight: 600;
+    --line-height: 23px;
+  }
+}
