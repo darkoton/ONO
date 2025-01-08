@@ -1,19 +1,73 @@
-:root{
-  --orange: #FF9100;
-  --gray: #9A9A9A;
-  --gray-light: #D0C6BE;
+:root {
+  --orange: #ff9100;
+  --gray: #9a9a9a;
+  --gray-light: #d0c6be;
   --white: #ffffff;
   --black: #111111;
-  --gradient: linear-gradient(90deg, #fff 3.98%, #facca6 26.63%, #f6aa6b 57.09%, #ff9100 89.28%);;
-  --green: #32E53B;
-  --red: #F44336;
+  --gradient: linear-gradient(90deg, #fff 3.98%, #facca6 26.63%, #f6aa6b 57.09%, #ff9100 89.28%);
+  --green: #32e53b;
+  --red: #f44336;
 }
 
+.typography {
+  &.h1 {
+    font-weight: 600;
+    line-height: 120%;
+    font-size: 72px;
+  }
+  &.h2 {
+    & {
+      font-weight: 500;
+    }
+  }
+  &.h3 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 54px;
+  }
+  &.h4 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+  }
+  &.h5 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+  }
+  &.h6 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+  }
+  &.text-big {
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 22px;
+  }
+  &.text-medium {
+    font-weight: 400;
+    line-height: 180%;
+    font-size: 19px;
+  }
+  &.text-small {
+    font-weight: 400;
+    line-height: 150%;
+    font-size: 17px;
+  }
+  &.btn {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 17px;
+  }
+}
 
-.btn{
+.button {
   border-radius: 60px;
   text-transform: uppercase;
   border-style: solid;
+  display: flex;
+  gap: 12px;
 
   background: var(--bg-color);
   border-color: var(--border-color);
@@ -24,18 +78,19 @@
   font-weight: var(--font-weight);
   line-height: var(--line-height);
 
-  @media(any-hover:hover){
+  @media (any-hover: hover) {
     cursor: pointer;
     transition: all 0.3s ease 0s;
 
-    &:hover{
+    &:hover {
       background-color: var(--bg-color-hover);
       border-color: var(--border-color-hover);
       color: var(--color-hover);
     }
   }
 
-  &, &.primary{
+  &,
+  &.primary {
     --bg-color: var(--orange);
     --bg-color-hover: var(--white);
     --border-color: var(--orange);
@@ -49,8 +104,7 @@
     --line-height: 23px;
   }
 
-
-  &.secondary{
+  &.secondary {
     border-radius: 0;
     --bg-color: transparent;
     --bg-color-hover: var(--white);
@@ -65,7 +119,7 @@
     --line-height: 22px;
   }
 
-  &.text-1{
+  &.text-1 {
     border-radius: 0;
     --bg-color: transparent;
     --bg-color-hover: transparent;
@@ -80,7 +134,7 @@
     --line-height: 23px;
   }
 
-  &.text-2{
+  &.text-2 {
     --bg-color: transparent;
     --bg-color-hover: transparent;
     --border-color: var(--white);
@@ -93,6 +147,4 @@
     --font-weight: 600;
     --line-height: 23px;
   }
-
-
 }

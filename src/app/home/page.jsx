@@ -1,9 +1,7 @@
-import {Button} from '@/components/ui/Button'
+import Header from '@/components/Header'
 
 export default function Home() {
   return <>
-  home
-r
-<Button variant='text-1'>Test</Button>
+    <Header />
   </>
 }

@@ -1,4 +1,4 @@
-import {Open_Sans} from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "@/assets/style/main.scss";
 import "@/assets/style/ui.scss";
 
@@ -15,7 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={openSans.className}>
-        {children}
+        <div className="wrapper">
+          <div className="content">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );

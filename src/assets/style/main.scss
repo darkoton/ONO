@@ -55,6 +55,7 @@ input::-ms-clear {
 
 button {
   cursor: pointer;
+  background: transparent;
 }
 
 button::-moz-focus-inner {
@@ -104,6 +105,26 @@ input {
   border-radius: 0;
 }
 
-body{
-  background: var(--black)
+body {
+  background: var(--black);
+  color: var(--white);
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 auto;
+  padding-top: 86px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
