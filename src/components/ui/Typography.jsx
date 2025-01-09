@@ -10,12 +10,14 @@ const defaultProps = {
   variant: 'h1',
   className: null,
   tag: null,
+  weight: null,
 }
 
 export const Typography = ({
   className = defaultProps.className,
   variant = defaultProps.variant,
   tag = defaultProps.tag,
+  weight = defaultProps.weight,
   children,
   ...props }) => {
 
@@ -31,6 +33,9 @@ export const Typography = ({
           className
         )
       }
+      style={{
+        'font-weight': `${weight ? weight : ''}`
+      }}
       {...props}>
 
       {children}

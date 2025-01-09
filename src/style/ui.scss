@@ -190,6 +190,7 @@
     display: inline-block;
 
     @include mixins.fluid(font-size, 22px, 18px, 390px, 1600px);
+    @include mixins.fluid(line-height, 33px, 27px, 390px, 1600px);
     @include mixins.fluid(margin-bottom, 8px, 4px, 390px, 1600px);
   }
 
@@ -204,6 +205,7 @@
     transition: all 0.3s ease 0s;
 
     @include mixins.fluid(font-size, 17px, 15px, 390px, 1600px);
+    @include mixins.fluid(line-height, 26px, 23px, 390px, 1600px);
     @include mixins.fluid(padding, 17px, 15px, 390px, 1600px);
 
     &:placeholder {
