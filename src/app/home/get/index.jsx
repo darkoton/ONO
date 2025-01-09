@@ -25,7 +25,7 @@ const Get = () => {
           </div>
 
           <Typography className={style.headDesc}
-            variant='text-small'
+            variant='text-medium'
             tag='p'>
             Buying ONO is easy! Follow just three steps to get the cryptocurrency directly to your wallet. We have made the process as convenient and secure as possible.
           </Typography>

@@ -4,7 +4,7 @@ import About from './about'
 import Features from './features'
 import Earn from './earn'
 import Get from './get'
-// import Wallet from './wallet'
+import Wallet from './wallet'
 import Footer from './footer'
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
     <Features />
     <Earn />
     <Get />
+    <Wallet />
     <Footer />
   </>
 }

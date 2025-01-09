@@ -205,7 +205,6 @@
     transition: all 0.3s ease 0s;
 
     @include mixins.fluid(font-size, 17px, 15px, 390px, 1600px);
-    @include mixins.fluid(line-height, 26px, 23px, 390px, 1600px);
     @include mixins.fluid(padding, 17px, 15px, 390px, 1600px);
 
     &:placeholder {
