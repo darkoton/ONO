@@ -11,7 +11,7 @@ import icon4 from './img/icon-4.svg'
 
 
 const Features = () => {
-  return <div className={style.features}>
+  return <section className={style.features}>
     <div className="container">
       <div className={style.body}>
         <div className={classNames(style.card, style.cardTop)}>
@@ -103,7 +103,7 @@ const Features = () => {
 
       </div>
     </div>
-  </div>
+  </section>
 }
 
 export default Features; 
