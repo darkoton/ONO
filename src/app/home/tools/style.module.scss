@@ -1,0 +1,101 @@
+.games {
+  background: url("./img/bg.png") 0 0 / cover no-repeat;
+
+  @media (max-width: 768px) {
+    background: url("./img/bg-mob.png") 0 0 / cover no-repeat;
+  }
+}
+.body {
+  @include mixins.fluid(padding-top, 120px, 40px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 120px, 40px, 390px, 1600px);
+}
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include mixins.fluid(margin-bottom, 52px, 32px, 390px, 1600px);
+}
+.subtitle {
+  margin-bottom: 4px;
+}
+.title {
+  @include mixins.fluid(margin-bottom, 12px, 4px, 390px, 1600px);
+}
+.desc {
+  color: rgba(208, 198, 190, 0.7);
+  max-width: 620px;
+  text-align: center;
+}
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+
+  @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+
+  @media (max-width: 440px) {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(250px);
+  background: rgba(26, 26, 26, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+
+  @include mixins.fluid(padding-top, 32.5px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 32.5px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-left, 28px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 28px, 16px, 390px, 1600px);
+  @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 8px;
+
+  @include mixins.fluid(margin-bottom, 8px, 12px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    flex-direction: row;
+  }
+}
+.cardIcon {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  margin-bottom: 20px;
+
+  @include mixins.fluid(padding, 22px, 11.5px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    margin-bottom: 0;
+  }
+}
+.icon {
+  @include mixins.fluid(max-width, 56px, 30px, 390px, 1600px);
+  @include mixins.fluid(max-height, 56px, 30px, 390px, 1600px);
+}
+.cardInfo {
+  @include mixins.fluid(padding-left, 14px, 8px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 14px, 8px, 390px, 1600px);
+}
+.cardDesc {
+  color: var(--gray);
+  @include mixins.fluid(margin-bottom, 24px, 20px, 390px, 1600px);
+}
+.cardButton {
+  @media (max-width: 440px) {
+    width: 100%;
+    justify-content: center;
+  }
+}
