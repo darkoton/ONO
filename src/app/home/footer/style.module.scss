@@ -1,0 +1,121 @@
+.footer {
+  background: url("./img/bg.png") 0 0 / cover no-repeat;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 640px) {
+    backdrop-filter: blur(250px);
+    background: rgba(26, 26, 26, 0.35);
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1760px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  @include mixins.fluid(padding-top, 60px, 40px, 390px, 1600px);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mixins.fluid(padding-bottom, 45px, 24px, 390px, 1600px);
+  row-gap: 24px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (max-width: 640px) {
+    align-items: flex-start;
+  }
+}
+.nav {
+  display: flex;
+  @include mixins.fluid(gap, 32px, 12px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+  }
+}
+.link {
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+
+  @include mixins.fluid(font-size, 14px, 16px, 390px, 1600px);
+  @include mixins.fluid(line-height, 19px, 22px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    width: 120px;
+  }
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}
+.contacts {
+  display: flex;
+  @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(252, 228, 208, 0.5);
+  color: var(--white);
+  @include mixins.fluid(padding, 12px, 11px, 390px, 1600px);
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--orange);
+      border-color: var(--orange);
+    }
+  }
+}
+.contactIcon {
+  @include mixins.fluid(width, 20px, 18px, 390px, 1600px);
+}
+.bottom {
+  padding-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+.copyRight,
+.infoLink {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: var(--gray);
+}
+.infoLink {
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}
+.right {
+  display: flex;
+  gap: 20px;
+}

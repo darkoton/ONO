@@ -3,7 +3,7 @@ import style from './style.module.scss'
 import { Typography } from '@ui/Typography'
 import { Button } from '@ui/Button'
 import Image from 'next/image';
-import ArrowRoute from '@/components/icons/ArrowRoute';
+import ArrowRoute from '@icons/ArrowRoute';
 
 import img1 from './img/img-1.png'
 import img2 from './img/img-2.png'

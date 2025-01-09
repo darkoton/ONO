@@ -151,14 +151,9 @@
 }
 
 .button {
-  font-weight: 600;
   font-size: 15px;
-  text-transform: uppercase;
-  color: var(--white);
   padding: 12px 28.5px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 60px;
-  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
 
   @media (any-hover: hover) {
     cursor: pointer;
@@ -166,6 +161,7 @@
     &:hover {
       border-color: var(--orange);
       background-color: var(--orange);
+      color: var(--white);
     }
   }
 
@@ -177,6 +173,7 @@
 .buttonMob {
   display: none;
   border-color: var(--orange);
+  padding: 16px 28.5px;
 
   @media (any-hover: hover) {
     cursor: pointer;

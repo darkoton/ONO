@@ -2,27 +2,27 @@
 import style from './style.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import Burger from '@/components/icons/Burger'
-import X from '@/components/icons/X'
+import Burger from '@icons/Burger'
+import X from '@icons/X'
 import classNames from 'classnames'
-import {Button} from '@/components/ui/Button'
+import { Button } from '@/components/ui/Button'
 import { useState } from 'react'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  function changeMenuOpen(value){
-    return ()=> {
+  function changeMenuOpen(value) {
+    return () => {
       if (value) {
         setMenuOpen(value)
         if (value) {
           document.body.classList.add('lock')
-        }else{
+        } else {
           document.body.classList.remove('lock')
         }
-      }else{
+      } else {
         document.body.classList.toggle('lock')
-        setMenuOpen(state=>{
+        setMenuOpen(state => {
           return !state;
         })
       }
@@ -38,20 +38,22 @@ const Header = () => {
     <div className={style.container}>
       <div className={style.body}>
         <div
-        className={classNames(style.backward, {
-          [style.active]: menuOpen
-        })}
-        onClick={changeMenuOpen(false)}
+          className={classNames(style.backward, {
+            [style.active]: menuOpen
+          })}
+          onClick={changeMenuOpen(false)}
         ></div>
 
+        <Link href='/'>
+          <Image className={style.logo} width='112' height='42' priority={true} src='./img/logo.svg' alt='Logo' />
+        </Link>
 
-        <Image className={style.logo} width='112' height='42' priority={true} src='./image/logo.svg' alt='Logo' />
         <div className={classNames(style.menu, {
           [style.active]: menuOpen
         })}>
-        <button className={style.closeMenu} onClick={changeMenuOpen(false)}>
-          <X/>
-        </button>
+          <button className={style.closeMenu} onClick={changeMenuOpen(false)}>
+            <X />
+          </button>
 
           <nav className={style.nav}>
             <Link href='#' className={style.link}>
@@ -80,12 +82,12 @@ const Header = () => {
         <Button variant='secondary' className={style.button}>Wallet Log in</Button>
 
         <button
-        className={classNames(style.burger, {
-          [style.active]: menuOpen
-        })}
-        onClick={changeMenuOpen()}>
-        <Burger className={style.burgerIcon} />
-        <X className={style.closeIcon} />
+          className={classNames(style.burger, {
+            [style.active]: menuOpen
+          })}
+          onClick={changeMenuOpen()}>
+          <Burger className={style.burgerIcon} />
+          <X className={style.closeIcon} />
         </button>
 
       </div>
