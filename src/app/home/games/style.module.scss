@@ -1,0 +1,63 @@
+.games {
+  background: url("./img/bg.png") 0 0 / cover no-repeat;
+
+  @media (max-width: 768px) {
+    background: url("./img/bg-mob.png") 0 0 / cover no-repeat;
+  }
+}
+.body {
+  @include mixins.fluid(padding-top, 120px, 40px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 120px, 40px, 390px, 1600px);
+}
+.head {
+  text-align: center;
+  @include mixins.fluid(margin-bottom, 52px, 32px, 390px, 1600px);
+}
+.subtitle {
+  margin-bottom: 4px;
+}
+.title {
+  @include mixins.fluid(margin-bottom, 12px, 4px, 390px, 1600px);
+}
+.desc {
+  color: rgba(208, 198, 190, 0.7);
+}
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+
+  @include mixins.fluid(gap, 20px, 16px, 390px, 1600px);
+
+  @media (max-width: 440px) {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.fluid(gap, 20px, 8px, 390px, 1600px);
+}
+.img {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  transition: all 0.3s ease 0s;
+  // filter: grayscale(1);
+  max-width: 100%;
+  object-fit: cover;
+
+  @include mixins.fluid(max-height, 302px, 230px, 390px, 1600px);
+}
+.cardInfo {
+  @include mixins.fluid(padding-left, 14px, 8px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 14px, 8px, 390px, 1600px);
+}
+.cardTitle {
+  @include mixins.fluid(margin-bottom, 8px, 4px, 390px, 1600px);
+}
+.cardDate {
+  font-size: 15px;
+  line-height: 23px;
+  color: var(--orange);
+}

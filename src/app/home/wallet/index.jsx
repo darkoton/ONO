@@ -7,7 +7,6 @@ const Wallet = () => {
   return <section className={style.wallet}>
     <div className='container'>
       <div className={style.body}>
-
         <div className={style.card}>
           <div className={style.info}>
             <Typography variant='h2'>
