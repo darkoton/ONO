@@ -76,16 +76,24 @@
   border-style: solid;
   display: flex;
   gap: 12px;
+  align-items: center;
 
   background: var(--bg-color);
   border-color: var(--border-color);
   border-width: var(--border-width);
   color: var(--color);
   padding: var(--padding);
-  // font-size: var(--font-size);
-  // @include mixins.fluid(font-size, var(--font-size), var(--font-size) - 2px, 390px, 1600px);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
+  font-size: var(--font-size);
+
+  @media (max-width: 768px) {
+    font-size: calc(var(--font-size) - 1px);
+  }
+
+  @media (max-width: 640px) {
+    font-size: calc(var(--font-size) - 2px);
+  }
 
   @media (any-hover: hover) {
     cursor: pointer;
@@ -96,17 +104,21 @@
       border-color: var(--border-color-hover);
       color: var(--color-hover);
 
-      &.rotate-icon{
-        & .icon{
+      &.rotate-icon {
+        & .icon {
           transform: rotate(45deg);
         }
       }
     }
   }
 
-  &.rotate-icon{
-    & .icon{
-      transition: all 0.3s ease 0s;
+  & .icon {
+    display: flex;
+    align-items: center;
+  }
+  &.rotate-icon {
+    & .icon {
+      transition: transform 0.3s ease 0s;
     }
   }
 

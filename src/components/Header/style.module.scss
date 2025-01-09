@@ -8,12 +8,11 @@
   border-bottom: 1px solid transparent;
 
   @media (max-width: 680px) {
-    &.active{
+    &.active {
       background: #111;
       border-color: rgba(255, 255, 255, 0.1);
     }
   }
-
 }
 
 .container {
@@ -36,20 +35,20 @@
   max-width: 112px;
 }
 
-.backward{
+.backward {
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
   display: none;
   transition: all 0.3s ease 0s;
   opacity: 0;
   pointer-events: none;
 
-  &.active{
+  &.active {
     opacity: 1;
     pointer-events: all;
   }
@@ -81,7 +80,7 @@
     transition: all 0.3s ease-in-out 0s;
     right: -100%;
 
-    &.active{
+    &.active {
       pointer-events: all;
       right: 0;
     }
@@ -97,7 +96,7 @@
     transform: scale(0.8);
     opacity: 0;
 
-    &.active{
+    &.active {
       opacity: 1;
       transform: scale(1);
       pointer-events: all;
@@ -105,7 +104,7 @@
   }
 }
 
-.closeMenu{
+.closeMenu {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -127,9 +126,9 @@
   row-gap: 16px;
   align-items: center;
 
-  @media (max-width: 992px){
+  @media (max-width: 992px) {
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 }
 
@@ -203,7 +202,8 @@
     display: block;
   }
 
-  & .burgerIcon, & .closeIcon{
+  & .burgerIcon,
+  & .closeIcon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -212,11 +212,11 @@
     opacity: 0;
   }
 
-  & .burgerIcon{
+  & .burgerIcon {
     opacity: 1;
   }
 
-  & .closeIcon{
+  & .closeIcon {
     display: none;
 
     @media (max-width: 640px) {
@@ -224,11 +224,11 @@
     }
   }
 
-  &.active{
-    & .burgerIcon{
+  &.active {
+    & .burgerIcon {
       opacity: 0;
     }
-    & .closeIcon{
+    & .closeIcon {
       opacity: 1;
     }
   }
