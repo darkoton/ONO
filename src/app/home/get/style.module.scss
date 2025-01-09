@@ -1,0 +1,51 @@
+.get {
+  background: url("./img/bg.png") center/ cover no-repeat;
+  background-color: #111;
+
+  @media (max-width: 768px) {
+    background: url("./img/bg-mob.png") center/ cover no-repeat;
+  }
+}
+.body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "head head"
+    "card1 card2";
+  gap: 20px;
+}
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 28px;
+  backdrop-filter: blur(250px);
+  background: rgba(26, 26, 26, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.head {
+  grid-area: head;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+.subtitle {
+  margin-bottom: 4px;
+}
+.headDesc {
+  color: var(--gray);
+  max-width: 460px;
+}
+.card1 {
+  grid-area: card1;
+}
+.card2 {
+  grid-area: card2;
+}
+.cardTitle {
+  display: flex;
+  gap: 12px;
+}

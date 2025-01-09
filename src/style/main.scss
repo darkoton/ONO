@@ -106,10 +106,11 @@ input {
 }
 
 body {
-  background: var(--black);
+  background: url("/img/bg.png") 0 0 / cover;
+  background-color: var(--black);
   color: var(--white);
 
-  &.lock{
+  &.lock {
     overflow: hidden;
   }
 }

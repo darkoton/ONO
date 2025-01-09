@@ -1,6 +1,5 @@
 .main {
   background: url("./img/bg.png") center/ cover no-repeat;
-  background-color: #0d0d0d;
   @include mixins.fluid(padding-top, 275px, 142px, 390px, 1600px);
   @include mixins.fluid(padding-bottom, 227px, 47px, 390px, 1600px);
 
