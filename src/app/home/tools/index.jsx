@@ -7,8 +7,8 @@ import icon1 from './img/icon-1.svg'
 import icon2 from './img/icon-2.svg'
 import icon3 from './img/icon-3.svg'
 
-const Games = () => {
-  return <section className={style.games}>
+const Tools = () => {
+  return <section className={style.tools}>
     <div className='container'>
       <div className={style.body}>
         <div className={style.head}>
@@ -72,4 +72,4 @@ const Games = () => {
   </section>
 }
 
-export default Games
+export default Tools

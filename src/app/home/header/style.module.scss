@@ -7,6 +7,11 @@
   transition: all 0.3s ease 0s;
   border-bottom: 1px solid transparent;
 
+  &.fixed {
+    background: #111;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
   @media (max-width: 680px) {
     &.active {
       background: #111;

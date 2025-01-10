@@ -6,10 +6,25 @@ import Burger from '@icons/Burger'
 import X from '@icons/X'
 import classNames from 'classnames'
 import { Button } from '@/components/ui/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isFixed, setIsFixed] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  function handleScroll() {
+    if (window.scrollY >= 80) {
+      setIsFixed(true)
+    } else {
+      setIsFixed(false)
+    }
+  }
 
   function changeMenuOpen(value) {
     return () => {
@@ -32,7 +47,8 @@ const Header = () => {
 
   return <header className={
     classNames(style.header, {
-      [style.active]: menuOpen
+      [style.active]: menuOpen,
+      [style.fixed]: isFixed
     })
   }>
     <div className={style.container}>

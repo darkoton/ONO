@@ -7,6 +7,7 @@ import Get from './get'
 import Wallet from './wallet'
 import Games from './games'
 import Tools from './tools'
+import Resources from './resources'
 import Footer from './footer'
 
 
@@ -22,6 +23,7 @@ export default function Home() {
     <Wallet />
     <Games />
     <Tools />
+    <Resources />
     <Footer />
   </>
 }
