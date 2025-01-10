@@ -1,4 +1,6 @@
 .wallet {
+  background: linear-gradient(0deg, rgba(17, 17, 17, 0.7) 0%, rgba(0, 0, 0, 0) 90%, rgba(17, 17, 17, 0.7) 100%),
+    rgb(0 0 0 / 15%);
 }
 .body {
   @include mixins.fluid(padding-top, 80px, 40px, 390px, 1600px);

@@ -34,7 +34,7 @@ export const Typography = ({
         )
       }
       style={{
-        'font-weight': `${weight ? weight : ''}`
+        fontWeight: `${weight ? weight : ''}`
       }}
       {...props}>
 
