@@ -14,10 +14,10 @@ export default function Auth1() {
       <Image className={style.logo} src='/img/logo.svg' width={110} height={42} />
       <div className={style.info}>
         <Typography className={style.title} variant='h2' tag='h1'>
-          Log In to Start Earning with ONO and Dota 2
+          Welcome Back to Your ONO Wallet !
         </Typography>
         <Typography className={style.desc} variant='text-small' tag='p'>
-          Log in with Google or Steam to track your Dota 2 performance, earn ONO coins, and manage your wallet. If you sign in with Google, link your Steam account in settings to start earning.
+          Log in or create an account to securely manage your ONO coins. Fast, simple, and secure access with Google and Apple accounts
         </Typography>
 
         <div className={style.buttons}>
