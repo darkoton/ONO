@@ -113,6 +113,10 @@ body {
   &.lock {
     overflow: hidden;
   }
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 .wrapper {

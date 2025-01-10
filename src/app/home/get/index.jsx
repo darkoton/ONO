@@ -1,14 +1,27 @@
+'use client'
 import classNames from 'classnames';
 import style from './style.module.scss'
 import { Typography } from '@ui/Typography';
 import { Button } from '@ui/Button';
 import { Field } from '@ui/Field';
 import Image from 'next/image';
+import Popup from '../popup-transaction';
+import { useState } from 'react';
 
 import cardIcon from './img/card-coin.svg'
 import shildIcon from './img/shild.svg'
 
 const Get = () => {
+
+  const [popupOpen, setPopupOpen] = useState(false)
+
+  function openPopup() {
+    setPopupOpen(true)
+  }
+
+  function closePopup() {
+    setPopupOpen(false)
+  }
 
   return <section className={style.get}>
     <div className="container">
@@ -53,7 +66,7 @@ const Get = () => {
             </div>
           </div>
 
-          <Button variant='primary' className={style.button}>
+          <Button variant='primary' className={style.button} onClick={openPopup}>
             <span className={style.buttonPc}>Generate Address</span>
 
             <span className={style.buttonMb}>Buy</span>
@@ -133,6 +146,8 @@ const Get = () => {
         </div>
       </div>
     </div>
+
+    <Popup isOpen={popupOpen} close={closePopup} />
   </section>
 }
 

@@ -11,6 +11,7 @@ import Resources from './resources'
 import Footer from './footer'
 
 
+
 export default function Home() {
 
   return <>
@@ -25,5 +26,6 @@ export default function Home() {
     <Tools />
     <Resources />
     <Footer />
+
   </>
 }
