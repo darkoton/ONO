@@ -1,0 +1,43 @@
+.wallet {
+  background: linear-gradient(0deg, rgba(17, 17, 17, 0.7) 0%, rgba(0, 0, 0, 0) 90%, rgba(17, 17, 17, 0.7) 100%),
+    rgb(0 0 0 / 15%);
+}
+.body {
+  @include mixins.fluid(padding-top, 80px, 40px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 80px, 40px, 390px, 1600px);
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 50px;
+  align-items: center;
+  border-radius: 16px;
+  background: url("./img/bg.png") 0 0 / cover no-repeat;
+  overflow: hidden;
+
+  @include mixins.fluid(padding, 60px, 20px, 390px, 1600px);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    background: url("./img/bg-mob.png") 0 0 / cover no-repeat;
+    align-items: start;
+  }
+}
+.desc {
+  max-width: 590px;
+}
+.button {
+  gap: 57px;
+  width: 100%;
+  max-width: 220px;
+  padding: 0 24px;
+
+  @include mixins.fluid(padding-top, 18.5px, 15px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 18.5px, 15px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    max-width: 100%;
+    justify-content: space-between;
+  }
+}

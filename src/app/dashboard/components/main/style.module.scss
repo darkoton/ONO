@@ -1,0 +1,73 @@
+.main {
+  flex: 1 1 auto;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  padding: 0 40px;
+}
+.header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.headerBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0;
+}
+.title {
+  font-weight: 600;
+  font-size: 28px;
+}
+.buttonNotf {
+  width: 48px;
+  height: 48px;
+  color: var(--white);
+  border-radius: 180px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  & .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+.content {
+  flex: 1 1 auto;
+  padding: 20px 0;
+}
+.footerBody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.footerText {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footerRight {
+  display: flex;
+  gap: 12px;
+}
+.footerLink {
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--orange);
+    }
+  }
+}

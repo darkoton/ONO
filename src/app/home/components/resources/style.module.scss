@@ -1,0 +1,93 @@
+.resources {
+  background:
+    linear-gradient(0deg, rgba(17, 17, 17, 0.7) 0%, rgba(0, 0, 0, 0) 90%, rgba(17, 17, 17, 0.7) 100%),
+    url("./img/bg.png") 0 0 / cover no-repeat;
+
+  @media (max-width: 768px) {
+    background:
+      linear-gradient(0deg, rgba(17, 17, 17, 0.7) 0%, rgba(0, 0, 0, 0) 90%, rgba(17, 17, 17, 0.7) 100%),
+      url("./img/bg-mob.png") 0 0 / cover no-repeat;
+  }
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mixins.fluid(padding-top, 120px, 40px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 120px, 40px, 390px, 1600px);
+}
+.head {
+  text-align: center;
+  @include mixins.fluid(margin-bottom, 52px, 32px, 390px, 1600px);
+}
+.subtitle {
+  margin-bottom: 4px;
+}
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+
+  @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(250px);
+  background: rgba(26, 26, 26, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  @include mixins.fluid(gap, 70px, 12px, 390px, 1600px);
+  @include mixins.fluid(padding, 28px, 16px, 390px, 1600px);
+  @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
+}
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
+}
+.cardTitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+.cardDesc {
+  color: var(--gray);
+}
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.cardTags {
+  display: flex;
+  @include mixins.fluid(gap, 8px, 4px, 390px, 1600px);
+}
+.cardTag {
+  color: var(--orange);
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mixins.fluid(padding-top, 10px, 8px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 10px, 8px, 390px, 1600px);
+  @include mixins.fluid(padding-left, 24px, 12px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 24px, 12px, 390px, 1600px);
+  @include mixins.fluid(font-size, 15px, 13px, 390px, 1600px);
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      color: var(--white);
+    }
+  }
+}

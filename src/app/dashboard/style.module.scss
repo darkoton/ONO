@@ -1,0 +1,9 @@
+.layout {
+  flex: 1 1 auto;
+  display: flex;
+  background: url("./img/bg.png") center/cover no-repeat;
+
+  @media (max-width: 768px) {
+    background: url("./img/bg-mob.png") center/contain no-repeat;
+  }
+}
