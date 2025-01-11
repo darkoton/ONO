@@ -4,21 +4,84 @@
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(250px);
   background: rgba(26, 26, 26, 0.38);
-  padding: 16px;
+
   position: relative;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  transition: all 0.3s ease 0s;
+  // overflow: hidden;
+
+  @include mixins.fluid(padding, 16px, 20px, 390px, 1600px);
+
+  @media (min-width: 1080px) {
+    &.full {
+      max-width: 88px;
+
+      & .head {
+        padding: 0;
+
+        @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
+        @include mixins.fluid(padding-bottom, 40px, 0px, 390px, 1600px);
+      }
+
+      & .logo {
+        gap: 0;
+
+        span {
+          font-size: 0;
+        }
+      }
+
+      & .link,
+      .logOut {
+        gap: 0;
+        span {
+          font-size: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1080px) {
+    max-width: 300px;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    transform: translateX(-100%);
+    top: 0;
+    transition: all 0.3s ease 0s;
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
 }
 .top {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   flex: 1 1 auto;
+
+  @include mixins.fluid(gap, 40px, 20px, 390px, 1600px);
 }
 .head {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 24px;
+  @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 40px, 0px, 390px, 1600px);
+  @include mixins.fluid(padding-left, 24px, 0px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 24px, 0px, 390px, 1600px);
+  transition: all 0.3s ease 0s;
+}
+.logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+
+  span {
+    font-weight: 400;
+    font-size: 24px;
+    transition: all 0.3s ease 0s;
+  }
 }
 .nav {
   display: flex;
@@ -32,8 +95,15 @@
   background-color: transparent;
   display: flex;
   align-items: center;
+  font-weight: 500;
+  font-size: 16px;
   gap: 16px;
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease 0s;
+
+  span {
+    transition: all 0.3s ease 0s;
+  }
 }
 
 .link {
@@ -45,7 +115,7 @@
     top: 0;
     left: calc(100% + 8px);
     border-radius: 12px 0 0 12px;
-    width: 17px;
+    width: 10px;
     height: 100%;
     background-color: var(--orange);
     transition: all 0.3s ease 0s;
@@ -63,6 +133,7 @@
 
   &.active {
     background-color: var(--orange);
+    color: var(--white);
 
     &::after {
       opacity: 1;
@@ -93,6 +164,10 @@
   border-width: 1px 0 1px 1px;
   border-color: transparent;
   border-style: solid;
+  transition: all 0.3s ease 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   color: var(--white);
 
@@ -102,6 +177,12 @@
     &:hover {
       border-color: rgba(255, 255, 255, 0.3);
       background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (min-width: 1080px) {
+    &.full {
+      transform: translateX(100%) scaleX(-1);
     }
   }
 }

@@ -1,11 +1,13 @@
 .main {
   flex: 1 1 auto;
-  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
+
+  @include mixins.fluid(padding-bottom, 15px, 20px, 390px, 1600px);
 }
 .container {
-  padding: 0 40px;
+  @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 40px, 16px, 390px, 1600px);
 }
 .header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -19,16 +21,32 @@
 .title {
   font-weight: 600;
   font-size: 28px;
+
+  @media (max-width: 1080px) {
+    display: none;
+  }
+}
+.titleMob {
+  display: block;
+  margin-top: 20px;
+
+  @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
+  @include mixins.fluid(padding-right, 40px, 16px, 390px, 1600px);
+
+  @media (min-width: 1080px) {
+    display: none;
+  }
 }
 .buttonNotf {
-  width: 48px;
-  height: 48px;
   color: var(--white);
-  border-radius: 180px;
+  border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include mixins.fluid(width, 48px, 40px, 390px, 1600px);
+  @include mixins.fluid(height, 48px, 40px, 390px, 1600px);
 
   @media (any-hover: hover) {
     cursor: pointer;
@@ -43,15 +61,49 @@
     height: 20px;
   }
 }
+.burgerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  display: none;
+
+  padding: 5px;
+  color: var(--white);
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (max-width: 1080px) {
+    display: flex;
+  }
+}
+.burger {
+  width: 40px;
+  height: 40px;
+}
 .content {
   flex: 1 1 auto;
   padding: 20px 0;
+}
+.footer {
+  @media (max-width: 1080px) {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
 }
 .footerBody {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  padding-top: 10px;
+  flex-wrap: wrap;
+
+  @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
 }
 .footerText {
   font-weight: 400;

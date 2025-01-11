@@ -6,23 +6,40 @@ import Link from "next/link"
 import style from './style.module.scss'
 import { usePathname } from 'next/navigation'
 import classNames from "classnames";
+import { Open_Sans } from "next/font/google"
 
 import DashboardIcon from "@icons/Dashboard"
 import RecentTimeIcon from "@icons/RecentTime"
 import GearIcon from "@icons/Gear"
 import LogOutIcon from "@icons/LogOut"
 import Arrowleft from "@icons/Arrowleft"
+import { useState } from "react"
 
-const Sidebar = () => {
+const openSans = Open_Sans({
+  subsets: ["latin"],
+});
+
+const Sidebar = ({
+  active,
+  close = () => { }
+}) => {
+
+  const [fullWidth, setFullWidth] = useState(false)
 
   const pathname = usePathname()
 
   const isActive = (path) => pathname === path;
 
-  return <div className={style.sidebar}>
+  return <div className={classNames(style.sidebar, {
+    [style.active]: active,
+    [style.full]: fullWidth
+  })}>
     <div className={style.top}>
       <div className={style.head}>
-        <Image src='/img/logo.svg' height={42} width={112} alt='logo' />
+        <div className={classNames(style.logo, openSans.className)}>
+          <Image src='/img/logo-icon.svg' height={42} width={48} alt='logo' />
+          <span>ONO</span>
+        </div>
       </div>
 
       <div className={style.nav}>
@@ -32,7 +49,7 @@ const Sidebar = () => {
               [style.active]: isActive('/dashboard/home')
             })}>
           <DashboardIcon />
-          Dashboard
+          <span>Dashboard</span>
         </Link>
 
         <Link href='/dashboard/history' className={
@@ -41,7 +58,7 @@ const Sidebar = () => {
           })
         }>
           <RecentTimeIcon />
-          Transaction History
+          <span>Transaction History</span>
         </Link>
 
         <Link href='/dashboard/settings' className={
@@ -50,19 +67,23 @@ const Sidebar = () => {
           })
         }>
           <GearIcon />
-          Settings
+          <span>Settings</span>
         </Link>
       </div>
     </div>
 
     <Link href='/logOut' className={style.logOut}>
       <LogOutIcon />
-
-      Log out
+      <span>Log out</span>
     </Link>
 
-    <button className={style.arrowButton}>
-      <Arrowleft />
+    <button
+      className={classNames(style.arrowButton, { [style.full]: fullWidth })}
+      onClick={() => {
+        setFullWidth(!fullWidth)
+        close()
+      }}>
+      <Arrowleft className={classNames(style.arrowLeftIcon)} />
     </button>
   </div>
 }
