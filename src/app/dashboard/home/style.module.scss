@@ -26,11 +26,3 @@
       "transactions";
   }
 }
-.section {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(250px);
-  background: rgba(26, 26, 26, 0.38);
-
-  @include mixins.fluid(padding, 24px, 16px, 390px, 1600px);
-  @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
-}

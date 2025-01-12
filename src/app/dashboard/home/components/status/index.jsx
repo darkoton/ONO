@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import globalStyle from '../../style.module.scss'
+import globalStyle from '../../../style.module.scss'
 import style from './style.module.scss'
 import { Button } from '@ui/Button'
 

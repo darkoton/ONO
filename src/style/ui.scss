@@ -196,6 +196,10 @@
     @include mixins.fluid(margin-bottom, 8px, 4px, 390px, 1600px);
   }
 
+  .field-body {
+    position: relative;
+  }
+
   input {
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 100px;
@@ -209,6 +213,13 @@
     @include mixins.fluid(font-size, 17px, 15px, 390px, 1600px);
     @include mixins.fluid(padding, 17px, 15px, 390px, 1600px);
 
+    &.icon-left {
+      padding-left: 44px;
+    }
+    &.icon-right {
+      padding-right: 44px;
+    }
+
     &:placeholder {
       color: var(--gray);
       opacity: 0.4;
@@ -220,6 +231,22 @@
 
     &.error {
       border-color: var(--red);
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #878787;
+
+    &,
+    &.icon-left {
+      left: 12px;
+    }
+
+    &.icon-right {
+      right: 12px;
     }
   }
 
@@ -245,6 +272,8 @@
 }
 
 .dropdown {
+  position: relative;
+  z-index: 10;
   label {
     font-weight: 400;
     font-size: 16px;
@@ -252,7 +281,7 @@
     margin-bottom: 8px;
     display: inline-block;
   }
-  .field {
+  .select {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -287,6 +316,9 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
+  }
+  .placeholder {
+    color: rgba(135, 135, 135, 0.4);
   }
   .icon {
     color: var(--orange);

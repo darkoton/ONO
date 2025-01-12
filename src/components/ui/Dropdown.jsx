@@ -8,7 +8,8 @@ const defaultProps = {
   value: '',
   label: '',
   options: [],
-  onChange: () => { }
+  onChange: () => { },
+  placeholder: ''
 }
 
 const Dropdown = ({
@@ -17,22 +18,23 @@ const Dropdown = ({
   label = defaultProps.label,
   options = defaultProps.options,
   onChange = defaultProps.onChange,
+  placeholder = defaultProps.placeholder,
   ...props
 }) => {
-
   const [isActive, setIsActive] = useState(false)
 
   return <div className={classNames('dropdown', className)} {...props}>
     {label && <label>{label}</label>}
 
-    <div className={classNames('field', {
+    <div className={classNames('select', {
       active: isActive
     })}>
-
       <div className='toggle' onClick={() => {
         setIsActive(!isActive)
       }}>
-        <div className='value'>{value}</div>
+        {value || !placeholder
+          ? <div className='value'>{value}</div>
+          : placeholder ? <div className='placeholder'>{placeholder}</div> : ''}
         <ArrowUpFilled className='icon' />
       </div>
 

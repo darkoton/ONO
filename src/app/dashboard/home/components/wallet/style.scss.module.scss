@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   grid-area: wallet;
+  position: relative;
+  z-index: 2;
 }
 .head {
   display: flex;
