@@ -1,0 +1,88 @@
+.status {
+  display: flex;
+  flex-direction: column;
+  grid-area: status;
+  gap: 20px;
+  // @include mixins.fluid(gap, 20px, 16px, 390px, 1600px);
+}
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+.head {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.indicatorStatus {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.indicator {
+  color: var(--green);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(50, 229, 59, 0.1);
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+}
+.statusText {
+  font-weight: 600;
+  font-size: 28px;
+}
+.quality {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.qualityItem {
+  display: flex;
+  justify-content: space-between;
+}
+.qualityTitle {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.qualityValue {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(50, 229, 59, 0.2);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}

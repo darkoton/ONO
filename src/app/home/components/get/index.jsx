@@ -55,10 +55,7 @@ const Get = () => {
 
           <div className={style.form}>
             <div className={style.field}>
-              <Field required label='ONO amount' id='amount' placeholder='Enter amount in ONO' />
-              <Typography className={style.note} variant='text-small' tag='p'>
-                *Price per 1 ONO: 1.10 USDT
-              </Typography>
+              <Field required label='ONO amount' id='amount' placeholder='Enter amount in ONO' note='*Price per 1 ONO: 1.10 USDT' />
             </div>
 
             <div className={style.field}>

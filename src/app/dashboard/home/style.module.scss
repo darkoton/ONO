@@ -1,10 +1,10 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    "balance wallet transactions"
-    "transfer status transactions"
-    "transfer status transactions";
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-template-areas:
+  //   "balance wallet transactions"
+  //   "transfer status transactions"
+  //   "transfer status transactions";
 
   @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
 }
