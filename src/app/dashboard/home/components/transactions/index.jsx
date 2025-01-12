@@ -130,7 +130,7 @@ const Transactions = () => {
       </li>
     </ul>
 
-    <Button className={style.button}>
+    <Button variant='secondary' className={style.button}>
       <span className={style.pcValue}>View more</span>
       <span className={style.mobValue}>Retry Sync</span>
     </Button>

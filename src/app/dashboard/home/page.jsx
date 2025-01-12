@@ -8,10 +8,10 @@ import Status from './components/status'
 
 const Home = () => {
   return <div className={style.grid}>
-    {/* <Balance /> */}
-    {/* <Wallet /> */}
-    {/* <Transactions /> */}
-    {/* <Transfer /> */}
+    <Balance />
+    <Wallet />
+    <Transactions />
+    <Transfer />
     <Status />
   </div>
 }

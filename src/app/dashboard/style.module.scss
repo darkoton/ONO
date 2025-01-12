@@ -1,7 +1,14 @@
 .layout {
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: auto;
   flex: 1 1 auto;
   display: flex;
   background: url("./img/bg.png") center/cover no-repeat;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   @media (max-width: 768px) {
     background: url("./img/bg-mob.png") center/cover no-repeat;

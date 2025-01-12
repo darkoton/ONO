@@ -30,62 +30,66 @@ const Sidebar = ({
 
   const isActive = (path) => pathname === path;
 
-  return <div className={classNames(style.sidebar, {
-    [style.active]: active,
-    [style.full]: fullWidth
-  })}>
-    <div className={style.top}>
-      <div className={style.head}>
-        <div className={classNames(style.logo, openSans.className)}>
-          <Image src='/img/logo-icon.svg' height={42} width={48} alt='logo' />
-          <span>ONO</span>
+  return <>
+    <div className={classNames(style.backward, {
+      [style.active]: active,
+    })} onClick={close}></div>
+    <div className={classNames(style.sidebar, {
+      [style.active]: active,
+      [style.full]: fullWidth
+    })}>
+      <div className={style.top}>
+        <div className={style.head}>
+          <div className={classNames(style.logo, openSans.className)}>
+            <Image src='/img/logo-icon.svg' height={42} width={48} alt='logo' />
+            <span>ONO</span>
+          </div>
+        </div>
+
+        <div className={style.nav}>
+          <Link href='/dashboard/home'
+            className={
+              classNames(style.link, {
+                [style.active]: isActive('/dashboard/home')
+              })}>
+            <DashboardIcon />
+            <span>Dashboard</span>
+          </Link>
+
+          <Link href='/dashboard/history' className={
+            classNames(style.link, {
+              [style.active]: isActive('/dashboard/history')
+            })
+          }>
+            <RecentTimeIcon />
+            <span>Transaction History</span>
+          </Link>
+
+          <Link href='/dashboard/settings' className={
+            classNames(style.link, {
+              [style.active]: isActive('/dashboard/settings')
+            })
+          }>
+            <GearIcon />
+            <span>Settings</span>
+          </Link>
         </div>
       </div>
 
-      <div className={style.nav}>
-        <Link href='/dashboard/home'
-          className={
-            classNames(style.link, {
-              [style.active]: isActive('/dashboard/home')
-            })}>
-          <DashboardIcon />
-          <span>Dashboard</span>
-        </Link>
+      <Link href='/logOut' className={style.logOut}>
+        <LogOutIcon />
+        <span>Log out</span>
+      </Link>
 
-        <Link href='/dashboard/history' className={
-          classNames(style.link, {
-            [style.active]: isActive('/dashboard/history')
-          })
-        }>
-          <RecentTimeIcon />
-          <span>Transaction History</span>
-        </Link>
-
-        <Link href='/dashboard/settings' className={
-          classNames(style.link, {
-            [style.active]: isActive('/dashboard/settings')
-          })
-        }>
-          <GearIcon />
-          <span>Settings</span>
-        </Link>
-      </div>
-    </div>
-
-    <Link href='/logOut' className={style.logOut}>
-      <LogOutIcon />
-      <span>Log out</span>
-    </Link>
-
-    <button
-      className={classNames(style.arrowButton, { [style.full]: fullWidth })}
-      onClick={() => {
-        setFullWidth(!fullWidth)
-        close()
-      }}>
-      <Arrowleft className={classNames(style.arrowLeftIcon)} />
-    </button>
-  </div>
+      <button
+        className={classNames(style.arrowButton, { [style.full]: fullWidth })}
+        onClick={() => {
+          setFullWidth(!fullWidth)
+          close()
+        }}>
+        <Arrowleft className={classNames(style.arrowLeftIcon)} />
+      </button>
+    </div></>
 }
 
 export default Sidebar

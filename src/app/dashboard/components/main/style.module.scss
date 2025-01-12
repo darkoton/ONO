@@ -2,8 +2,6 @@
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-
-  @include mixins.fluid(padding-bottom, 15px, 20px, 390px, 1600px);
 }
 .container {
   @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
@@ -104,12 +102,14 @@
   padding-top: 10px;
   flex-wrap: wrap;
 
+  @include mixins.fluid(padding-bottom, 15px, 20px, 390px, 1600px);
   @include mixins.fluid(gap, 12px, 8px, 390px, 1600px);
 }
 .footerText {
   font-weight: 400;
   font-size: 14px;
   color: rgba(255, 255, 255, 0.7);
+  line-height: 19px;
 }
 .footerRight {
   display: flex;

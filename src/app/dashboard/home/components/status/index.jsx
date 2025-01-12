@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import globalStyle from '../../style.module.scss'
 import style from './style.module.scss'
+import { Button } from '@ui/Button'
 
 import CheckMark from '@icons/CheckMark'
 
@@ -44,7 +45,21 @@ const Status = () => {
         </li>
       </ul>
 
-      <div className={style.progress}></div>
+      <div className={style.progress}>
+        <div className={style.progressTitle}>Progress</div>
+        <div className={style.progressValue}>
+          <div className={style.progressTop}>
+            <div className={style.progressMin}>0%</div>
+            <div className={style.progressMax}>100%</div>
+          </div>
+
+          <div className={style.progressBar}>
+            <div className={style.progressTrack}></div>
+          </div>
+        </div>
+      </div>
+
+      <Button className={style.button} variant='secondary'>Retry Sync</Button>
     </div>
   </div>
 }

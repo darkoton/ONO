@@ -1,11 +1,13 @@
 .sidebar {
   width: 100%;
+  min-width: 280px;
   max-width: 280px;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(250px);
   background: rgba(26, 26, 26, 0.38);
+  top: 0;
+  position: sticky;
 
-  position: relative;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease 0s;
@@ -16,12 +18,13 @@
   @media (min-width: 1080px) {
     &.full {
       max-width: 88px;
+      min-width: 88px;
 
       & .head {
         padding: 0;
 
         @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
-        @include mixins.fluid(padding-bottom, 40px, 0px, 390px, 1600px);
+        @include mixins.fluid(padding-bottom, 40px, 20px, 390px, 1600px);
       }
 
       & .logo {
@@ -50,6 +53,7 @@
     transform: translateX(-100%);
     top: 0;
     transition: all 0.3s ease 0s;
+    z-index: 100;
 
     &.active {
       transform: translateX(0);
@@ -65,11 +69,12 @@
 }
 .head {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease 0s;
+
   @include mixins.fluid(padding-top, 40px, 0px, 390px, 1600px);
-  @include mixins.fluid(padding-bottom, 40px, 0px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 40px, 20px, 390px, 1600px);
   @include mixins.fluid(padding-left, 24px, 0px, 390px, 1600px);
   @include mixins.fluid(padding-right, 24px, 0px, 390px, 1600px);
-  transition: all 0.3s ease 0s;
 }
 .logo {
   display: flex;
@@ -127,7 +132,7 @@
     cursor: pointer;
     transition: all 0.3s ease 0s;
     &:hover {
-      background-color: var(--orange);
+      background: rgba(255, 255, 255, 0.05);
     }
   }
 
@@ -184,5 +189,16 @@
     &.full {
       transform: translateX(100%) scaleX(-1);
     }
+  }
+}
+.backward {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  display: none;
+
+  &.active {
+    display: block;
   }
 }
