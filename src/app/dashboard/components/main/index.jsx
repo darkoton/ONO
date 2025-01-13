@@ -69,7 +69,7 @@ const Main = ({
         <div className={style.footerBody}>
           <div className={style.footerText}>© 2024 All rights reserved</div>
           <div className={style.footerRight}>
-            <Link href='#' className={classNames(style.footerText, style.footerLink)}>Terms of Use</Link>
+            <Link href='/dashboard/terms-of-use' className={classNames(style.footerText, style.footerLink)}>Terms of Use</Link>
             <Link href='#' className={classNames(style.footerText, style.footerLink)}>Privacy Policy</Link>
           </div>
         </div>

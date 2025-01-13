@@ -17,15 +17,17 @@
   overflow: auto;
   padding-bottom: 12px;
 
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background-color: var(--orange);
+  @media (hover: hover) {
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background-color: var(--orange);
+    }
   }
 }
 .tableBody {
