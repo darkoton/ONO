@@ -23,5 +23,5 @@ export const Field = ({
         This field is required to be filled in
       </span>
     }
-  </div >
+  </div>
 }

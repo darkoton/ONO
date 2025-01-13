@@ -12,7 +12,7 @@ import DashboardIcon from "@icons/Dashboard"
 import RecentTimeIcon from "@icons/RecentTime"
 import GearIcon from "@icons/Gear"
 import LogOutIcon from "@icons/LogOut"
-import Arrowleft from "@icons/Arrowleft"
+import ArrowLeft from "@icons/ArrowLeft"
 import { useState } from "react"
 
 const openSans = Open_Sans({
@@ -87,7 +87,7 @@ const Sidebar = ({
           setFullWidth(!fullWidth)
           close()
         }}>
-        <Arrowleft className={classNames(style.arrowLeftIcon)} />
+        <ArrowLeft className={classNames(style.ArrowLeftIcon)} />
       </button>
     </div></>
 }

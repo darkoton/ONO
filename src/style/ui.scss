@@ -269,6 +269,19 @@
 
     @include mixins.fluid(font-size, 17px, 15px, 390px, 1600px);
   }
+
+  &.date-field {
+    .iconCalendar {
+      width: 24px;
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      padding-right: 10px;
+      border-right: 1px solid rgb(135, 135, 135, 0.4);
+      color: #878787;
+    }
+  }
 }
 
 .dropdown {
@@ -323,6 +336,8 @@
   .icon {
     color: var(--orange);
     transition: all 0.3s ease 0s;
+    width: 18px;
+    height: 18px;
   }
   .list {
     position: absolute;
@@ -411,5 +426,54 @@
     flex-direction: column;
 
     @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+  }
+}
+
+.pagination {
+  display: flex;
+
+  & .arrow-left {
+    border-radius: 20px 0 0 20px;
+  }
+
+  & .arrow-right {
+    border-radius: 0 20px 20px 0;
+  }
+
+  & .arrow,
+  & .page,
+  & .dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--white);
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  & .arrow,
+  & .page {
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        background-color: var(--orange);
+      }
+    }
+  }
+
+  & .page {
+    &.active {
+      background-color: var(--orange);
+    }
+  }
+
+  & .icon {
+    width: 6px;
+    height: 10px;
   }
 }
