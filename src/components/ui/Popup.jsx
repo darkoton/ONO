@@ -1,6 +1,4 @@
-'use client'
 import classNames from 'classnames'
-import { useEffect, useState } from 'react'
 
 const Popup = ({ isOpen = false, close, children }) => {
 

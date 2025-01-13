@@ -6,6 +6,7 @@ import style from './style.scss.module.scss'
 import { Button } from '@ui/Button'
 import { Dropdown } from '@ui/Dropdown'
 import { useState } from 'react'
+import Popup from '../add-adress'
 
 import Plus from '@icons/Plus'
 import Copy from '@icons/Copy'
@@ -29,17 +30,24 @@ const Wallet = () => {
     setDropdownValue(value)
   }
 
-  return <div className={classNames(globalStyle.section, style.wallet)}>
-    <div className={style.head}>
-      <div className={style.title}>Wallet address</div>
-      <Button className={style.button} iconPosition='left' icon={<Plus />}>Add address</Button>
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  return <>
+    <div className={classNames(globalStyle.section, style.wallet)}>
+      <div className={style.head}>
+        <div className={style.title}>Wallet address</div>
+        <Button className={style.button} iconPosition='left' icon={<Plus />} onClick={() => setPopupOpen(true)}>Add address</Button>
+      </div>
+
+      <div className={style.bottom}>
+        <Dropdown className={style.dropdown} onChange={dropdownChange} value={dropdownValue} options={options} label='Select an address' />
+        <Button variant='secondary' className={style.copy} icon={<Copy />} />
+      </div>
+
     </div>
 
-    <div className={style.bottom}>
-      <Dropdown className={style.dropdown} onChange={dropdownChange} value={dropdownValue} options={options} label='Select an address' />
-      <Button variant='secondary' className={style.copy} icon={<Copy />} />
-    </div>
-  </div>
+    <Popup isOpen={popupOpen} close={() => setPopupOpen(false)} />
+  </>
 }
 
 export default Wallet
