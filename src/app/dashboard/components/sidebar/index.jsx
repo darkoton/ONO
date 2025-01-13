@@ -73,6 +73,15 @@ const Sidebar = ({
             <GearIcon />
             <span>Settings</span>
           </Link>
+
+          <Link href='/dashboard/profile' className={
+            classNames(style.link, {
+              [style.active]: isActive('/dashboard/profile')
+            })
+          }>
+            <DashboardIcon />
+            <span>Profile</span>
+          </Link>
         </div>
       </div>
 

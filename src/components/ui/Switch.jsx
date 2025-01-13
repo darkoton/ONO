@@ -1,7 +1,10 @@
-const Switch = ({ id }) => {
-  return <label class="switch" for={id}>
-    <input type="checkbox" id={id} />
-    <div class="slider round">
+const Switch = ({ id,
+  onChange,
+  value
+}) => {
+  return <label className="switch" htmlFor={id}>
+    <input value={value} onChange={onChange} type="checkbox" id={id} />
+    <div className="slider round">
 
     </div>
   </label>
