@@ -1,0 +1,52 @@
+.overview {
+  grid-area: overview;
+}
+.title {
+  font-weight: 500;
+
+  @include mixins.fluid(margin-bottom, 48px, 16px, 390px, 1600px);
+  @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+  @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+}
+
+.infos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  row-gap: 23px;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.fluid(gap, 8px, 5px, 390px, 1600px);
+}
+.infoTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  @media (max-width: 768px) {
+    font-weight: 400;
+  }
+}
+.infoIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--orange);
+}
+.infoValue {
+  font-weight: 600;
+  color: #fff;
+  @include mixins.fluid(font-size, 28px, 26px, 390px, 1600px);
+  @include mixins.fluid(line-height, 42px, 39px, 390px, 1600px);
+
+  @media (max-width: 768px) {
+    font-weight: 500;
+  }
+}

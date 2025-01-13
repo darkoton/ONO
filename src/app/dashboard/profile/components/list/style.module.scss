@@ -1,3 +1,6 @@
+.list {
+  grid-area: list;
+}
 .head {
   display: flex;
   justify-content: space-between;
@@ -8,18 +11,6 @@
   font-weight: 600;
 
   @include mixins.fluid(font-size, 24px, 20px, 390px, 1600px);
-}
-.search {
-  width: auto;
-
-  input {
-    padding-top: 11px;
-    padding-bottom: 11px;
-  }
-
-  @media (max-width: 992px) {
-    display: none;
-  }
 }
 .table {
   width: 100%;
@@ -38,7 +29,8 @@
   }
 }
 .tableBody {
-  min-width: 1140px;
+  min-width: 882px;
+  overflow: hidden;
   display: flex;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -53,8 +45,13 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-width: 252px;
+  max-width: 343px;
   min-width: 190px;
+
+  &.wAuto {
+    min-width: auto;
+    width: auto;
+  }
 
   @media (max-width: 992px) {
     &:not(:last-child) {
@@ -71,46 +68,27 @@
   @include mixins.fluid(padding-bottom, 24px, 12px, 390px, 1600px);
 }
 .name {
-  margin-bottom: 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-}
-.dropdown {
-  width: 100%;
-
-  & [class="select"] {
-    background: rgba(255, 255, 255, 0.03);
-  }
-
-  & [class="toggle"] {
-    @include mixins.fluid(padding, 8px, 11px, 390px, 1600px);
-  }
-}
-.field {
-  input {
-    @include mixins.fluid(padding, 10px, 11px, 390px, 1600px);
-    font-size: 14px;
-    line-height: 115%;
-  }
-
-  &[class~="date-field"] input {
-    padding-left: 47px;
-  }
 }
 .values {
   display: flex;
   flex-direction: column;
 }
 .value {
-  padding: 18.5px 12px;
+  padding: 12px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 14px;
   line-height: 19px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 
-  @include mixins.fluid(padding-top, 18.5px, 12px, 390px, 1600px);
-  @include mixins.fluid(padding-bottom, 18.5px, 12px, 390px, 1600px);
+  @include mixins.fluid(padding-top, 12px, 6px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 12px, 6px, 390px, 1600px);
+  @include mixins.fluid(height, 58px, 47px, 390px, 1600px);
 
   &:nth-child(odd) {
     background: rgba(255, 255, 255, 0.08);
@@ -122,4 +100,13 @@
 }
 .pagination {
   margin-top: 12px;
+}
+.viewDetail {
+  padding: 8px 16px;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: none;
+  white-space: nowrap;
 }

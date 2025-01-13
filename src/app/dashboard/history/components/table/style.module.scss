@@ -1,0 +1,128 @@
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mixins.fluid(margin-bottom, 24px, 16px, 390px, 1600px);
+}
+.title {
+  font-weight: 600;
+
+  @include mixins.fluid(font-size, 24px, 20px, 390px, 1600px);
+}
+.search {
+  width: auto;
+
+  input {
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+.table {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 12px;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--orange);
+  }
+}
+.tableBody {
+  min-width: 1140px;
+  display: flex;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px 10px 0 0;
+  }
+}
+.tableColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 252px;
+  min-width: 190px;
+
+  @media (max-width: 992px) {
+    &:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+.tableHead {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @include mixins.fluid(padding-bottom, 24px, 12px, 390px, 1600px);
+}
+.name {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+.dropdown {
+  width: 100%;
+
+  & [class="select"] {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  & [class="toggle"] {
+    @include mixins.fluid(padding, 8px, 11px, 390px, 1600px);
+  }
+}
+.field {
+  input {
+    @include mixins.fluid(padding, 10px, 11px, 390px, 1600px);
+    font-size: 14px;
+    line-height: 115%;
+  }
+
+  &[class~="date-field"] input {
+    padding-left: 47px;
+  }
+}
+.values {
+  display: flex;
+  flex-direction: column;
+}
+.value {
+  padding: 18.5px 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+
+  @include mixins.fluid(padding-top, 18.5px, 12px, 390px, 1600px);
+  @include mixins.fluid(padding-bottom, 18.5px, 12px, 390px, 1600px);
+
+  &:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.08);
+
+    @media (max-width: 992px) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+.pagination {
+  margin-top: 12px;
+}

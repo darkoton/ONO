@@ -3,6 +3,19 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  // overflow: hidden;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: var(--orange);
+  }
 }
 .container {
   @include mixins.fluid(padding-left, 40px, 16px, 390px, 1600px);
@@ -90,6 +103,7 @@
 .content {
   flex: 1 1 auto;
   padding: 20px 0;
+  // overflow: auto;
 }
 .footer {
   @media (max-width: 1080px) {

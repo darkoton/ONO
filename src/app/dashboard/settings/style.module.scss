@@ -19,6 +19,7 @@
 
   label {
     position: relative;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
@@ -32,6 +33,11 @@
 .avatarText {
   font-size: 14px;
   line-height: 21px;
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 .avatarImage {
   @include mixins.fluid(max-width, 119px, 60px, 390px, 1600px);

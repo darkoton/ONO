@@ -10,7 +10,6 @@ import { Switch } from '@ui/Switch'
 import { useState } from 'react'
 
 import Photo from '@icons/Photo'
-import Avatar from './img/avatar.png'
 import Steam from '@icons/Steam'
 import Google from '@icons/GoogleColor'
 
@@ -26,7 +25,7 @@ const Settings = () => {
       <div className={style.avatar}>
         <input type='file' id='avatar' hidden />
         <label htmlFor='avatar'>
-          <Image className={style.avatarImage} src={Avatar} alt='avatar' width={119} height={119} />
+          <Image className={style.avatarImage} src='/img/avatar.png' alt='avatar' width={119} height={119} />
 
           <span className={style.avatarUpload}>
             <Photo className={style.avatarUploadIcon} />

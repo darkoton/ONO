@@ -1,0 +1,51 @@
+.info {
+  grid-area: info;
+}
+.title {
+  font-weight: 500;
+
+  @include mixins.fluid(font-size, 20px, 16px, 390px, 1600px);
+  @include mixins.fluid(line-height, 30px, 24px, 390px, 1600px);
+  @include mixins.fluid(margin-bottom, 10px, 16px, 390px, 1600px);
+}
+.user {
+  display: flex;
+  gap: 8px;
+
+  @include mixins.fluid(margin-bottom, 16px, 12px, 390px, 1600px);
+}
+.avatar {
+  @include mixins.fluid(max-width, 48px, 44px, 390px, 1600px);
+  @include mixins.fluid(max-height, 48px, 44px, 390px, 1600px);
+}
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.userName {
+  font-weight: 500;
+  @include mixins.fluid(font-size, 16px, 14px, 390px, 1600px);
+  @include mixins.fluid(line-height, 19px, 24px, 390px, 1600px);
+}
+.userDate {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.buttons {
+  display: flex;
+  @include mixins.fluid(gap, 16px, 8px, 390px, 1600px);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.button {
+  width: 100%;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 19px;
+  @include mixins.fluid(padding, 14.5px, 12.5px, 390px, 1600px);
+}

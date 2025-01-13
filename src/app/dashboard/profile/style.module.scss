@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-auto-flow: dense;
+  grid-template-areas:
+    "info balance overview"
+    "list list list";
+
+  @include mixins.fluid(gap, 20px, 12px, 390px, 1600px);
+
+  @media (max-width: 1665px) {
+    grid-template-areas:
+      "info balance"
+      "overview overview"
+      "list list";
+  }
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
