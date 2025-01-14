@@ -153,6 +153,13 @@
       color: var(--orange);
     }
   }
+
+  @media (max-width: 992px) {
+    font-size: 28px;
+    line-height: 42px;
+    text-transform: none;
+    color: var(--white);
+  }
 }
 
 .button {

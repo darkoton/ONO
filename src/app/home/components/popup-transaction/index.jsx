@@ -3,6 +3,7 @@ import { Typography } from '@ui/Typography'
 import { Button } from '@ui/Button'
 import style from './style.module.scss'
 import Copy from '@icons/Copy'
+import classNames from 'classnames'
 
 const PopupTransaction = ({ ...props }) => {
   return <Popup {...props}>
@@ -13,7 +14,7 @@ const PopupTransaction = ({ ...props }) => {
     <div className={style.row}>
       <div className={style.col}>
         <Typography className={style.popupTitle} variant='text-small' tag='p'>Payment address:</Typography>
-        <Typography className={style.popupValue} variant='btn' tag='p'>0xBeD95ce08D3daCC3889edd0d3D1165c9F...</Typography>
+        <Typography className={classNames(style.popupValue, style.popupCode)} variant='btn' tag='p'>0xBeD95ce08D3daCC3889edd0d3D1165c9F...</Typography>
       </div>
 
       <div className={style.col}>
