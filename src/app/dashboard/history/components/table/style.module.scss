@@ -87,13 +87,12 @@
   }
 
   & [class="toggle"] {
-    @include mixins.fluid(padding, 8px, 11px, 390px, 1600px);
+    @include mixins.fluid(height, 40px, 38px, 390px, 1600px);
   }
 }
 .field {
   input {
-    // padding-top: 20px;
-    @include mixins.fluid(padding, 9px, 11px, 390px, 1600px);
+    @include mixins.fluid(height, 42px, 40px, 390px, 1600px);
     font-size: 14px;
     line-height: 115%;
   }
