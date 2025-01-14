@@ -9,6 +9,9 @@ import { Button } from '@ui/Button'
 import { Switch } from '@ui/Switch'
 import { useState } from 'react'
 
+import PopupStep1 from './components/authentication-popup'
+import PopupStep2 from './components/recovery-popup'
+
 import Photo from '@icons/Photo'
 import Steam from '@icons/Steam'
 import Google from '@icons/GoogleColor'
@@ -20,7 +23,11 @@ const Settings = () => {
   const [smsMessage, setSmsMessage] = useState(false)
   const [emailMessage, setEmailMessage] = useState(true)
 
-  return <div className={classNames(globalStyle.section, style.settings)}>
+  const [popupOpen1, setPopupOpen1] = useState(false)
+  const [popupOpen2, setPopupOpen2] = useState(false)
+
+  return <>
+  <div className={classNames(globalStyle.section, style.settings)}>
     <div className={style.top}>
       <div className={style.avatar}>
         <input type='file' id='avatar' hidden />
@@ -56,7 +63,10 @@ const Settings = () => {
               <h4 className={style.sectionTitle}>Two-factor authentication</h4>
               <p className={style.sectionDesc}>Add an extra layer of security to your account by enabling 2FA</p>
             </div>
-            <Button variant='secondary' className={style.sectionButton}>Configure</Button>
+            <Button onClick={()=>{
+              setPopupOpen1(true)
+              setPopupOpen2(true)
+            }} variant='secondary' className={style.sectionButton}>Configure</Button>
           </div>
         </div>
       </div>
@@ -86,6 +96,10 @@ const Settings = () => {
       </div>
     </div>
   </div>
+
+  <PopupStep2 hasClose={false} isOpen={popupOpen2} close={()=>{setPopupOpen2(false)}} />
+  <PopupStep1 hasClose={false} isOpen={popupOpen1} close={()=>{setPopupOpen1(false)}} />
+  </>
 }
 
 export default Settings

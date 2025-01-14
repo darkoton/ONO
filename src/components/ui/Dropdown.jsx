@@ -33,7 +33,7 @@ const Dropdown = ({
         setIsActive(!isActive)
       }}>
         {value || !placeholder
-          ? <div className='value'>{value}</div>
+          ? <div className='value'>{value} </div>
           : placeholder ? <div className='placeholder'>{placeholder}</div> : ''}
         <ArrowUpFilled className='icon' />
       </div>
