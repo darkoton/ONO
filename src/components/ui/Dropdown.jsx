@@ -40,7 +40,10 @@ const Dropdown = ({
 
       <ul className='list'>
         {options.map(({ label, value }) => {
-          return <li onClick={() => onChange(value)} className='option' key={value} >{label ? label : value}</li>
+          return <li onClick={() => {
+            setIsActive(false)
+            onChange(value)
+          }} className='option' key={value} >{label ? label : value}</li>
         })}
       </ul>
     </div>

@@ -399,13 +399,15 @@
 
   pointer-events: none;
   opacity: 0;
-  transform: scale(0.9);
   transition: all 0.3s ease 0s;
 
   &.active {
     pointer-events: all;
     opacity: 1;
-    transform: scale(1);
+
+    & .popup-body {
+      transform: scale(1);
+    }
   }
 
   & .backward {
@@ -425,6 +427,8 @@
     z-index: 2;
     width: 100%;
     max-width: 500px;
+    transition: all 0.3s ease 0s;
+    transform: scale(0.9);
 
     @include mixins.fluid(padding, 24px, 16px, 390px, 1600px);
     @include mixins.fluid(border-radius, 16px, 12px, 390px, 1600px);
