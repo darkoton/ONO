@@ -47,7 +47,7 @@ const Sidebar = ({
         </div>
 
         <div className={style.nav}>
-          <Link href='/dashboard/home'
+          <Link onClick={close} href='/dashboard/home'
             className={
               classNames(style.link, {
                 [style.active]: isActive('/dashboard/home')
@@ -56,7 +56,7 @@ const Sidebar = ({
             <span>Dashboard</span>
           </Link>
 
-          <Link href='/dashboard/history' className={
+          <Link onClick={close} href='/dashboard/history' className={
             classNames(style.link, {
               [style.active]: isActive('/dashboard/history')
             })
@@ -65,7 +65,7 @@ const Sidebar = ({
             <span>Transaction History</span>
           </Link>
 
-          <Link href='/dashboard/settings' className={
+          <Link onClick={close} href='/dashboard/settings' className={
             classNames(style.link, {
               [style.active]: isActive('/dashboard/settings')
             })
@@ -74,7 +74,7 @@ const Sidebar = ({
             <span>Settings</span>
           </Link>
 
-          <Link href='/dashboard/profile' className={
+          <Link onClick={close} href='/dashboard/profile' className={
             classNames(style.link, {
               [style.active]: isActive('/dashboard/profile')
             })
@@ -85,7 +85,7 @@ const Sidebar = ({
         </div>
       </div>
 
-      <Link href='/logOut' className={style.logOut}>
+      <Link onClick={close} href='/logOut' className={style.logOut}>
         <LogOutIcon />
         <span>Log out</span>
       </Link>
