@@ -92,7 +92,8 @@
 }
 .field {
   input {
-    @include mixins.fluid(padding, 10px, 11px, 390px, 1600px);
+    // padding-top: 20px;
+    @include mixins.fluid(padding, 9px, 11px, 390px, 1600px);
     font-size: 14px;
     line-height: 115%;
   }
