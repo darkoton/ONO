@@ -92,9 +92,9 @@
 }
 .field {
   input {
-    @include mixins.fluid(height, 42px, 40px, 390px, 1600px);
     font-size: 14px;
     line-height: 115%;
+    @include mixins.fluid(height, 42px, 40px, 390px, 1600px);
   }
 
   &[class~="date-field"] input {

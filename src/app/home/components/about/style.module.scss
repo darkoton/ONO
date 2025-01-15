@@ -51,8 +51,8 @@
 .texts {
   display: flex;
   flex-direction: column;
-  @include mixins.fluid(gap, 16px, 10px, 390px, 1600px);
   color: rgba(208, 198, 190, 0.8);
+  @include mixins.fluid(gap, 16px, 10px, 390px, 1600px);
   @include mixins.fluid(margin-bottom, 32px, 24px, 390px, 1600px);
 }
 .button {
@@ -73,8 +73,8 @@
   object-fit: cover;
 
   @media (max-width: 768px) {
+    display: block;
     @include mixins.fluid(max-width, 780px, 390px, 390px, 768px);
     @include mixins.fluid(max-height, 596px, 320px, 390px, 768px);
-    display: block;
   }
 }

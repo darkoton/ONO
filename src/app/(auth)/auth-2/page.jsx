@@ -11,7 +11,7 @@ export default function Auth1() {
   return <div className={style.auth}>
     <Image priority src={woman} className={style.img} alt='man' />
     <div className={style.container}>
-      <Image className={style.logo} src='/img/logo.svg' width={110} height={42} />
+      <Image className={style.logo} src='/img/logo.svg' alt='logo' width={110} height={42} />
       <div className={style.info}>
         <Typography className={style.title} variant='h2' tag='h1'>
           Welcome Back to Your ONO Wallet !
